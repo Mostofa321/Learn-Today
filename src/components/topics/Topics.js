@@ -1,7 +1,12 @@
 import React from 'react';
-import './Topics.css'
+import { useLoaderData } from 'react-router-dom';
+import Category from '../category/Category';
+import './Topics.css';
 
 const Topics = () => {
+    const quizData = useLoaderData();
+    const quizCategories = quizData.data;
+    
     return (
         <div>
             <section className='banner  p-5 row justify-content-center align-items-center'>
@@ -12,9 +17,14 @@ const Topics = () => {
                     </p>
                 </div>
             </section>
-            <h1>the Home page</h1>
-            <section className='testContainer'></section>
+            <h1 className='my-5 text-center'>Quiz Categories</h1>
             
+            <div className='row row-cols-1  g-4  justify-content-center container mx-auto mb-5'>
+                {
+                    quizCategories.map(quizCategory => <Category key={quizCategory.id} quizCategory={quizCategory}></Category>)
+                }               
+               
+            </div>            
         </div>
     );
 };

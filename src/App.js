@@ -5,6 +5,9 @@ import Main from './components/main/Main';
 import Topics from './components/topics/Topics';
 import Statistics from './components/statistics/Statistics';
 import Blog from './components/blog/Blog';
+import Quizes from './components/quizes/Quizes';
+
+
 
 function App() {
   const router = createBrowserRouter([
@@ -14,11 +17,18 @@ function App() {
       children:[
         {
           path: '/',
-          element: <Topics></Topics>
+          element: <Topics></Topics>,
+          loader:() => fetch('https://openapi.programming-hero.com/api/quiz')
         },
         {
           path: '/topics',
-          element: <Topics></Topics>
+          element: <Topics></Topics>,
+          loader:() => fetch('https://openapi.programming-hero.com/api/quiz')
+        },
+        {
+          path: '/topics/:topicsId',
+          element: <Quizes></Quizes>,
+          loader: ({params}) => fetch(`https://openapi.programming-hero.com/api/quiz/${params.topicsId}`)
         },
         {
           path: '/statistics',
@@ -32,9 +42,10 @@ function App() {
     },
   ])
   return (
-    <div className="App">
-      <RouterProvider router={router}></RouterProvider>
-    </div>
+      <div className="">
+          <RouterProvider router={router}></RouterProvider>
+       </div>
+
   );
 }
 
