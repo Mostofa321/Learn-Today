@@ -1,0 +1,15 @@
+.banner{
+    height: 500px;
+    background: rgba(0, 0, 0, .45) url("../../../public/banner.jpg");
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:  100%  90%;
+    /* border-radius: 20% 20% 20% 20%; */
+    
+}
+.testContainer{
+    height: 1500px;
+    border-radius: 50% 50% 0% 0% ;
+}
