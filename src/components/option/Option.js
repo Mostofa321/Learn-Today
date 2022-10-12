@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Option = ({option, Key, id, correctAnswer}) => {
     const notify1 = () => toast('Correct Answer');
-    const notify2 = () => toast('Rong Answer');
+    const notify2 = () => toast('Wrong Answer');
     const correctAnswerChecker = () =>{
         (option === correctAnswer) ? notify1() : notify2();
     }
