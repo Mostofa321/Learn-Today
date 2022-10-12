@@ -38,13 +38,12 @@ const Statistics = () => {
     const quizQuantities = []
     const labels = [];
     const apiData = useLoaderData()
-    console.log(apiData)
     apiData.data.map(quizCategory => {
         quizQuantities.push(quizCategory.total);
         labels.push(quizCategory.name);
     });
     console.log(quizQuantities);
-    const [data, setData3] = useState(
+    const [data, setData] = useState(
         {
             labels,
             datasets: [

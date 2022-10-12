@@ -6,6 +6,7 @@ import Topics from './components/topics/Topics';
 import Statistics from './components/statistics/Statistics';
 import Blog from './components/blog/Blog';
 import Quizes from './components/quizes/Quizes';
+import NotFound from './components/notFoundPage/NotFound';
 
 
 
@@ -41,6 +42,10 @@ function App() {
         }
       ]
     },
+    {
+      path: '*',
+      element: <NotFound/>
+    }
   ])
   return (
       <div className="">
