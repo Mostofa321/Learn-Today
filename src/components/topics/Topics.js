@@ -6,13 +6,12 @@ import './Topics.css';
 const Topics = () => {
     const quizData = useLoaderData();
     const quizCategories = quizData.data;
-    
     return (
         <div>
             <section className='banner  p-5 row justify-content-center align-items-center'>
                 <div className='col-12 col-md-6'>
-                    <h1 className='text-white mt-5'>Learn Today And Check Your Programming Knowledge</h1>
-                    <p className='text-white'>Take quizzes on different programming languages
+                    <h1 className='text-white mt-5 text-center'>Learn Today And Check Your Programming Knowledge</h1>
+                    <p className='text-white text-center'>Take quizzes on different programming languages
                          ​​and test your programming knowledge and make yourself proficient in your preferred programming language
                     </p>
                 </div>
